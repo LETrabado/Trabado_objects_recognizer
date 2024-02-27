@@ -41,7 +41,7 @@ def app():
             verbose=0, warm_start=False)
     else:
         clf = BernoulliNB()
-
+        
     if st.button('Start'):
         df = pd.read_csv('symbols.csv', header=None)
         # st.dataframe(df, use_container_width=True)  
@@ -49,11 +49,12 @@ def app():
         # display the dataset
         st.header("Dataset")
         st.dataframe(df, use_container_width=True) 
-
+        
         #load the data and the labels
         X = df.values[:,0:-1]
         y = df.values[:,-1]    
 
+        st.write(selected_option)
         st.header('Images')
         # display the images 
         fig, axs = plt.subplots(4, 10, figsize=(20, 8))
