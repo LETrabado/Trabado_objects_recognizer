@@ -15,14 +15,14 @@ from sklearn.metrics import classification_report
 def app():
     
     st.title('Symbol Classification')
-    st.subheader('by Louie F. Cervantes M.Eng., WVSU College of ICT')
+    st.subheader('by Luis Emil Trabado BSCS 3B')
     
     st.write('Dataset description:')
 
     st.write('Number of features: 64')
     text = """Feature representation: Binary values (1 or 0) representing the 8x8 pixels of an image.
         Target variable: A single categorical variable representing the class 
-        of the image (e.g., digit recognition, traffic sign classification).
+        of the image (e.g., A flag, tree, door or a shovel).
         Potential Applications:"""
     st.write(text)
     st.write('Digit recognition: Identifying handwritten digits from 0-9.')
@@ -43,7 +43,7 @@ def app():
         clf = BernoulliNB()
 
     if st.button('Start'):
-        df = pd.read_csv('Arendain_Smiley.csv', header=None)
+        df = pd.read_csv('symbols.csv', header=None)
         # st.dataframe(df, use_container_width=True)  
         
         # display the dataset
